@@ -53,6 +53,7 @@ plugins=(git)
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PYTHONPATH=/home/blasphe/mnt/media/doc/doc/pro/pyanalysis/:$PYTHONPATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -322,8 +323,20 @@ alias pacman='sudo pacman-color'
 alias p='sudo pacman-color'
 alias y='yaourt'
 alias h='htop'
-alias vim='sudo vim'
- 
+#alias vim='sudo vim'
+alias g='git'
+alias ga='git add'
+alias gaa='git add -all'
+alias gapa='git add --patch'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gst='git status'
+alias gpo='git push origin'
+alias gpuo='git push -u origin'
+alias reboot='sudo reboot'
+alias shutdown='sudo shutdown'
+
+
 #[Esc][h] man 当前命令时，显示简短说明
 alias run-help >&/dev/null && unalias run-help
 autoload run-help
@@ -418,3 +431,4 @@ check-cmd-self-insert() { zle .self-insert && recolor-cmd }
  
  zle -N self-insert check-cmd-self-insert
  zle -N backward-delete-char check-cmd-backward-delete-char
+ EDITOR=vi
