@@ -352,6 +352,7 @@ hash -d H="/media/data/backup/ayu"
 hash -d E="/etc/"
 hash -d D="/home/blasphe/mnt/media/doc/doc"
 hash -d P="/home/blasphe/mnt/media/doc/doc/pro"
+hash -d PT="/home/blasphe/mnt/media/doc/doc/pro/tensorflow_pro"
 #}}}
  
 ##for Emacs {{{
