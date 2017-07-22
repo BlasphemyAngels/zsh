@@ -2,6 +2,8 @@
 export ZSH=$HOME/.oh-my-zsh
 clear
 archey3
+# cowsay -d "You are only young once, but you can stay immature indefinitely."
+# cowsay -d "你是sb"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,6 +55,8 @@ plugins=(git)
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/home/hadis/Documents/doc/doc/bash:$PATH
+export PATH=/home/hadis/.gem/ruby/2.4.0/bin:$PATH
 export PYTHONPATH=/home/blasphe/mnt/media/doc/doc/pro/pyanalysis/:$PYTHONPATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -112,9 +116,11 @@ esac
 #编辑器
 export EDITOR=vim
 #输入法
-export XMODIFIERS="@im=ibus"
-export QT_MODULE=ibus
-export GTK_MODULE=ibus
+export XMODIFIERS="@im=fcitx"
+export QT_MODULE=fcitx
+export GTK_MODULE=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
 #关于历史纪录的配置 {{{
 #历史纪录条目数量
 export HISTSIZE=10000
@@ -335,7 +341,7 @@ alias gpo='git push origin'
 alias gpuo='git push -u origin'
 alias reboot='sudo reboot'
 alias shutdown='sudo shutdown'
-
+alias v='vim'
 
 #[Esc][h] man 当前命令时，显示简短说明
 alias run-help >&/dev/null && unalias run-help
@@ -350,9 +356,10 @@ alias top10='print -l  ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
 hash -d A="/media/ayu/dearest"
 hash -d H="/media/data/backup/ayu"
 hash -d E="/etc/"
-hash -d D="/home/blasphe/mnt/media/doc/doc"
-hash -d P="/home/blasphe/mnt/media/doc/doc/pro"
-hash -d PT="/home/blasphe/mnt/media/doc/doc/pro/tensorflow_pro"
+hash -d D="/home/hadis/Documents/doc/doc"
+hash -d P="/home/hadis/Documents/doc/doc/pro"
+hash -d PT="/home/hadis/Documents/doc/doc/pro/tensorflow_pro"
+hash -d S="/home/hadis/Documents/doc/doc/pro/djangPro/student/site2"
 #}}}
  
 ##for Emacs {{{
@@ -432,4 +439,20 @@ check-cmd-self-insert() { zle .self-insert && recolor-cmd }
  
  zle -N self-insert check-cmd-self-insert
  zle -N backward-delete-char check-cmd-backward-delete-char
- EDITOR=vi
+ EDITOR=vim
+
+ export WORKON_HOME=~/.virtualenvs
+ source /usr/bin/virtualenvwrapper.sh
+ setxkbmap -option ctrl:swapcaps
+ set -o vi
+export TMPDIR=/home/hadis/Documents/tmp/
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
+export HADOOP_HOME=/usr/lib/hadoop-2.8.0/
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_YARN_HOME=$HADOOP_HOME
+export HADOOP_CONF_DIR=/etc/hadoop/
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HADOOP_HOME/lib
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+# export HADOOP_OPTS=""
