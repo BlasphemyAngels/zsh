@@ -1,7 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-clear
-archey3
 # cowsay -d "You are only young once, but you can stay immature indefinitely."
 # cowsay -d "你是sb"
 
@@ -55,9 +53,6 @@ plugins=(git)
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/home/hadis/Documents/doc/doc/bash:$PATH
-export PATH=/home/hadis/.gem/ruby/2.4.0/bin:$PATH
-export PYTHONPATH=/home/blasphe/mnt/media/doc/doc/pro/pyanalysis/:$PYTHONPATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -237,7 +232,6 @@ zstyle ':completion:*' squeeze-shlashes 'yes'
 zstyle ':completion::complete:*' '\\'
  
 #彩色补全菜单
-eval $(dircolors -b)
 export ZLSCOLORS="${LS_COLORS}"
 zmodload zsh/complist
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -318,16 +312,16 @@ bindkey "\e\e" sudo-command-line
 #}}}
  
 #命令别名 {{{
+alias python='python3'
+alias pip='pip3'
+alias gpu='ssh -t $gpu tmux'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
-alias ls='ls -F --color=auto'
+alias ls='ls -F'
 alias ll='ls -al'
-alias grep='grep --color=auto'
+alias grep='grep'
 alias la='ls -a'
-alias pacman='sudo pacman-color'
-alias p='sudo pacman-color'
-alias y='yaourt'
 alias h='htop'
 #alias vim='sudo vim'
 alias g='git'
@@ -341,7 +335,7 @@ alias gpo='git push origin'
 alias gpuo='git push -u origin'
 alias reboot='sudo reboot'
 alias shutdown='sudo shutdown'
-alias v='vim'
+alias vim='/usr/local/bin/vim'
 
 #[Esc][h] man 当前命令时，显示简短说明
 alias run-help >&/dev/null && unalias run-help
@@ -356,10 +350,9 @@ alias top10='print -l  ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
 hash -d A="/media/ayu/dearest"
 hash -d H="/media/data/backup/ayu"
 hash -d E="/etc/"
-hash -d D="/home/hadis/Documents/doc/doc"
-hash -d P="/home/hadis/Documents/doc/doc/pro"
-hash -d PT="/home/hadis/Documents/doc/doc/pro/tensorflow_pro"
-hash -d S="/home/hadis/Documents/doc/doc/pro/djangPro/student/site2"
+hash -d P="/Users/caochenglong/Documents/pro/"
+hash -d S="/Users/caochenglong/Documents/soft/"
+hash -d breaktime="/Users/caochenglong/Library/Application Scripts/com.excitedpixel.breaktime"
 #}}}
  
 ##for Emacs {{{
@@ -400,7 +393,7 @@ zsh-mime-setup
 setopt EXTENDED_GLOB
 #autoload -U promptinit
 #promptinit
-#prompt redhat
+#prompt rehat
  
 setopt correctall
 autoload compinstall
@@ -439,13 +432,8 @@ check-cmd-self-insert() { zle .self-insert && recolor-cmd }
  
  zle -N self-insert check-cmd-self-insert
  zle -N backward-delete-char check-cmd-backward-delete-char
- EDITOR=vim
 
- export WORKON_HOME=~/.virtualenvs
- source /usr/bin/virtualenvwrapper.sh
- setxkbmap -option ctrl:swapcaps
- set -o vi
-export TMPDIR=/home/hadis/Documents/tmp/
+
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
 export HADOOP_HOME=/usr/lib/hadoop-2.8.0/
 export HADOOP_COMMON_HOME=$HADOOP_HOME
@@ -456,3 +444,25 @@ export HADOOP_CONF_DIR=/etc/hadoop/
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$HADOOP_HOME/lib
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 # export HADOOP_OPTS=""
+ # virtualenvwrapper Setting
+ # Setting variable WORKON_HOME
+ export WORKON_HOME='~/.virtualenvs'
+ # Setting variable VIRTUALENVWRAPPER_PYTHON to locate python3 where virtualenvwrapper is installed.
+ # export PYTHONHOME="/usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6/bin/python3"
+ # Initialize the virtualenvwrapper
+ # source /usr/local/bin/virtualenvwrapper.sh
+ clear
+ tmux
+ export  LC_ALL=zh_CN.UTF-8
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+
+
+source /Users/caochenglong/Documents/soft/enhancd/init.sh
+screenfetch
+export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
+source /usr/local/bin/virtualenvwrapper.sh
+export PATH=/usr/local/Cellar/macvim/8.0-145_2/MacVim.app/Contents/bin/:$PATH
+#alias vim="/usr/local/Cellar/macvim/8.0-146/MacVim.app/Contents/MacOS/Vim"
+alias g++='g++ -std=c++11'  
+export gpu=neukg6@219.216.64.90
